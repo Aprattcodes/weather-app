@@ -4,7 +4,8 @@ window.addEventListener('load', ()=> {
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimeZone = document.querySelector('.location-timezone');
-    let iconPlacement = document.querySelector('icon');
+    let iconPlacement = document.querySelector('.icon');
+    let iconImg = document.createElement("img");
 
 
     if(navigator.geolocation){
@@ -24,12 +25,15 @@ window.addEventListener('load', ()=> {
                 const {text} = data.current.condition;
                 const {name,region} = data.location;
                 const {icon} = data.current.condition;
+                const icon_link = "https:" + icon; 
                 //set DOM elements from the API
-
+                
                 temperatureDegree.textContent = temp_f;
                 temperatureDescription.textContent = text;
                 locationTimeZone.textContent = name + "," + " " + region;
-                iconPlacement.textContent = icon;
+                
+                iconPlacement.appendChild(iconImg); //converts icon link to img
+                iconImg.src = icon_link;
                 
                 region;
 

@@ -15,18 +15,35 @@ body{
     color: antiquewhite;
 }
 
+.block {
+    background: linear-gradient(90deg, rgba(18, 11, 156, 0.562) 0%, rgba(7, 14, 104, 0.425) 50%, rgba(101, 39, 109, 0.452) 100%);
+    border-radius: 50px;
+    width: auto;
+    height: auto;
+    padding: 50px;
+    
+}
+img {
+    width: 15vh;
+    height: 15vh;
+}
 
 .location,
 .temperature, .icon {
     height: 30vh;
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
 
 .temperature {
     flex-direction: column;
+}
+
+.temperature-description {
+    font-size: 20px;
 }
 
 .degree-section {
